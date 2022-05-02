@@ -28,9 +28,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - uses: mr-smithers-excellent/docker-build-push@v5
+    - name: Docker Hub
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: tr330ak/demo-app
+        image: mrsmithers/hello-world
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
