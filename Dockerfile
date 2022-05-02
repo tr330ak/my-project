@@ -1,7 +1,7 @@
-FROM openjdk:11
+FROM openjdk:8-jre-alpine
 
 EXPOSE 8080
 
-ADD build/libs/BarkingCat-0.0.1-SNAPSHOT.jar app.jar
+COPY tr330ak/build/libs/my-app-1.0-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
