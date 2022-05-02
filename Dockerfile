@@ -1,6 +1,7 @@
 FROM openjdk:11
 EXPOSE 8080
 
-ADD ./build/libs/BarkingCat-0.0.1-SNAPSHOT.jar app.jar
+COPY ./build/libs/BarkingCat-0.0.1-SNAPSHOT.jar /usr/app/
+WORKDIR /usr/app
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","BarkingCat-0.0.1-SNAPSHOT.jar"]
